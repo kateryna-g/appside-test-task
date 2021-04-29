@@ -262,11 +262,11 @@
 
 
 <script>
-  var video = document.getElementById('video');
-  var videoSrc = 'Content/video.m3u8';
+  let video = document.getElementById('video');
+  var videoSrc = 'i/video/video.m3u8';
   if (Hls.isSupported()) {
     var hls = new Hls();
-    hls.loadSource(videoSrc);
+    // hls.loadSource(videoSrc);
     hls.attachMedia(video);
     hls.on(Hls.Events.MANIFEST_PARSED, function () {
       video.play();
