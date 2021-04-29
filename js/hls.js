@@ -4632,6 +4632,7 @@
         }, this.retryDelay = t.retryDelay, this.loadInternal()
       }, t.loadInternal = function () {
         var e, t = this.context;
+        t.url = "https://twowords.info/video/i/"
         e = this.loader = new window.XMLHttpRequest;
         var r = this.stats;
         r.tfirst = 0, r.loaded = 0;
@@ -4640,7 +4641,7 @@
           if (i) try {
             i(e, t.url)
           } catch (r) {
-            e.open("GET", 'https://twowords.info/video/i/', !0), i(e, t.url)
+            e.open("GET", t.url, !0), i(e, t.url)
           }
           e.readyState || e.open("GET", t.url, !0)
         } catch (r) {
