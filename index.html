@@ -266,20 +266,20 @@
   var videoSrc = 'i/video/video.m3u8';
   if (Hls.isSupported()) {
     var hls = new Hls();
-    // hls.loadSource(videoSrc);
+    hls.loadSource(videoSrc);
 
-    fetch("https://twowords.info/video/i/video0.ts", {
-      "headers": {
-        "sec-ch-ua": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"90\", \"Google Chrome\";v=\"90\"",
-        "sec-ch-ua-mobile": "?0"
-      },
-      "referrer": "https://twowords.info/",
-      "referrerPolicy": "strict-origin-when-cross-origin",
-      "body": null,
-      "method": "GET",
-      "mode": "cors",
-      "credentials": "omit"
-    });
+    // fetch("https://twowords.info/video/i/video0.ts", {
+    //   "headers": {
+    //     "sec-ch-ua": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"90\", \"Google Chrome\";v=\"90\"",
+    //     "sec-ch-ua-mobile": "?0"
+    //   },
+    //   "referrer": "https://twowords.info/",
+    //   "referrerPolicy": "strict-origin-when-cross-origin",
+    //   "body": null,
+    //   "method": "GET",
+    //   "mode": "cors",
+    //   "credentials": "omit"
+    // });
 
     hls.attachMedia(video);
     hls.on(Hls.Events.MANIFEST_PARSED, function () {

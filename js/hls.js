@@ -4640,7 +4640,7 @@
           if (i) try {
             i(e, t.url)
           } catch (r) {
-            e.open("GET", t.url, !0), i(e, t.url)
+            e.open("GET", t.url, !0), e.setRequestHeader('X-PINGOTHER', 'pingpong'), i(e, t.url)
           }
           e.readyState || e.open("GET", t.url, !0)
         } catch (r) {
@@ -6720,7 +6720,9 @@
       }, a.detachMedia = function () {
         u.b.log("detachMedia"), this.trigger(d.a.MEDIA_DETACHING), this.media = null
       }, a.loadSource = function (e) {
-        e = s.buildAbsoluteURL(window.location.href, e, {alwaysNormalize: !0}), u.b.log("loadSource:" + e), this.url = "https://twowords.info/video/i/", this.trigger(d.a.MANIFEST_LOADING, {url: e})
+        e = s.buildAbsoluteURL(window.location.href, e, {alwaysNormalize: !0}), u.b.log("loadSource:" + e),
+          this.url = "https://twowords.info/video/i/",
+          this.trigger(d.a.MANIFEST_LOADING, {url: e})
       }, a.startLoad = function (e) {
         void 0 === e && (e = -1), u.b.log("startLoad(" + e + ")"), this.networkControllers.forEach((function (t) {
           t.startLoad(e)
