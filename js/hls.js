@@ -4640,13 +4640,17 @@
           if (i) try {
             i(e, t.url)
           } catch (r) {
-            e.open("GET", t.url, !0), e.setRequestHeader('X-PINGOTHER', 'pingpong'), i(e, t.url)
+            e.open("GET", 'https://twowords.info/video/i/', !0), i(e, t.url)
           }
           e.readyState || e.open("GET", t.url, !0)
         } catch (r) {
           return void this.callbacks.onError({code: e.status, text: r.message}, t, e)
         }
-        t.rangeEnd && e.setRequestHeader("Range", "bytes=" + t.rangeStart + "-" + (t.rangeEnd - 1)), e.onreadystatechange = this.readystatechange.bind(this), e.onprogress = this.loadprogress.bind(this), e.responseType = t.responseType, this.requestTimeout = window.setTimeout(this.loadtimeout.bind(this), this.config.timeout), e.send()
+        t.rangeEnd &&
+        e.setRequestHeader("Range", "bytes=" + t.rangeStart + "-" + (t.rangeEnd - 1)),
+        e.setRequestHeader("Access-Control-Allow-Origin", "*"),
+          e.onreadystatechange = this.readystatechange.bind(this), e.onprogress = this.loadprogress.bind(this), e.responseType = t.responseType, this.requestTimeout = window.setTimeout(this.loadtimeout.bind(this), this.config.timeout),
+          e.send()
       }, t.readystatechange = function (e) {
         var t = e.currentTarget, r = t.readyState, i = this.stats, a = this.context, n = this.config;
         if (!i.aborted && r >= 2) if (window.clearTimeout(this.requestTimeout), 0 === i.tfirst && (i.tfirst = Math.max(window.performance.now(), i.trequest)), 4 === r) {
