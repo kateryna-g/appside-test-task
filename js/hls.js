@@ -4632,7 +4632,6 @@
         }, this.retryDelay = t.retryDelay, this.loadInternal()
       }, t.loadInternal = function () {
         var e, t = this.context;
-        t.url = "https://twowords.info/video/i/"
         e = this.loader = new window.XMLHttpRequest;
         var r = this.stats;
         r.tfirst = 0, r.loaded = 0;
@@ -4649,7 +4648,6 @@
         }
         t.rangeEnd &&
         e.setRequestHeader("Range", "bytes=" + t.rangeStart + "-" + (t.rangeEnd - 1)),
-        e.setRequestHeader("Access-Control-Allow-Origin", "*"),
           e.onreadystatechange = this.readystatechange.bind(this), e.onprogress = this.loadprogress.bind(this), e.responseType = t.responseType, this.requestTimeout = window.setTimeout(this.loadtimeout.bind(this), this.config.timeout),
           e.send()
       }, t.readystatechange = function (e) {

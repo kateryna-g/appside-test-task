@@ -1,9 +1,5 @@
 ﻿<!DOCTYPE html>
 <html lang="ru">
-<!-- Общее Дело -->
-
-<!-- Mirrored from twowords.info/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Apr 2021 15:02:23 GMT -->
-<!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8"/><!-- /Added by HTTrack -->
 <head>
   <meta charset="UTF-8">
@@ -268,19 +264,6 @@
     var hls = new Hls();
     hls.loadSource(videoSrc);
 
-    // fetch("https://twowords.info/video/i/video0.ts", {
-    //   "headers": {
-    //     "sec-ch-ua": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"90\", \"Google Chrome\";v=\"90\"",
-    //     "sec-ch-ua-mobile": "?0"
-    //   },
-    //   "referrer": "https://twowords.info/",
-    //   "referrerPolicy": "strict-origin-when-cross-origin",
-    //   "body": null,
-    //   "method": "GET",
-    //   "mode": "cors",
-    //   "credentials": "omit"
-    // });
-
     hls.attachMedia(video);
     hls.on(Hls.Events.MANIFEST_PARSED, function () {
       video.play();
@@ -316,6 +299,4 @@
 </script>
 </body>
 
-
-<!-- Mirrored from twowords.info/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Apr 2021 15:02:46 GMT -->
 </html>
